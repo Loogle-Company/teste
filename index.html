@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações do Usuário</title>
+</head>
+<body>
+
+<div id="infoUsuario"></div>
+<div id="infoIdade"></div>
+<div id="infoDispositivo"></div>
+<div id="infoLocalizacao"></div>
+
+<script>
+    // Obter o nome do usuário do localStorage se existir, caso contrário, solicitar ao usuário
+    let nomeUsuario = localStorage.getItem("nomeUsuario");
+
+    if (!nomeUsuario) {
+        nomeUsuario = prompt("Digite seu nome:");
+        localStorage.setItem("nomeUsuario", nomeUsuario);
+    }
+
+    // Obter a idade do usuário do localStorage se existir, caso contrário, solicitar ao usuário
+    let idadeUsuario = localStorage.getItem("idadeUsuario");
+
+    if (!idadeUsuario) {
+        idadeUsuario = prompt("Digite sua idade:");
+        localStorage.setItem("idadeUsuario", idadeUsuario);
+    }
+
+    // Obter o tipo de dispositivo
+    const dispositivo = /Android/i.test(navigator.userAgent) ? 'Android' : /iPhone|iPad|iPod/i.test(navigator.userAgent) ? 'iOS' : 'Outro';
+
+    // Obter a localização do usuário usando a API de geolocalização
+    navigator.geolocation.getCurrentPosition(
+        (position) => {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            // Atualizar os elementos na página com as informações
+            document.getElementById("infoUsuario").innerText = `Nome: ${nomeUsuario}`;
+            document.getElementById("infoIdade").innerText = `Idade: ${idadeUsuario}`;
+            document.getElementById("infoDispositivo").innerText = `Dispositivo: ${dispositivo}`;
+            document.getElementById("infoLocalizacao").innerText = `Localização: Latitude ${latitude}, Longitude ${longitude}`;
+        },
+        (error) => {
+            console.error("Erro ao obter localização:", error.message);
+        }
+    );
+</script>
+
+</body>
+</html>
