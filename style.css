@@ -1,0 +1,894 @@
+/* BODY */
+
+* {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    transition: all 2s ease;
+}
+
+/* TELA DE CARREGAMENTO */
+
+#a {
+    background-color: rgb(53, 53, 53);
+    height: 50vh;
+    top: 0;
+    position: relative;
+}
+
+#b {
+    background-color: rgb(53, 53, 53);
+    height: 50vh;
+    position: relative;
+    bottom: 0;
+}
+
+/* Efeito de transição */
+#a.a {
+    top: -50vh;
+}
+
+#b.b {
+    bottom: -50vh;
+}
+
+.nokia{
+    display: none;
+}
+
+.texto p {
+color: rgb(242, 0, 0);
+font-size: 0px;
+z-index: 999;
+display: none; /* Começa escondido */
+animation: fadeIn 2s ease;
+
+}
+
+.aviso{
+display:none;
+}
+
+@keyframes fadeIn {
+from {
+opacity: 0;
+height: 0;
+}
+to {
+opacity: 1;
+height: auto;
+}
+}
+
+
+html, body{
+    width: 100%;
+    height: 100vh;
+    background-color: #f8f8f8;
+}
+
+
+
+/* Nova classe para esconder a div B após a transição */
+.b-hidden {
+    display: none;
+}
+
+.loader {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 45%;
+    
+}
+
+.loader div {
+    background: rgb(255, 255, 255);
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    z-index: 1;
+    animation: anim 2s infinite linear;
+    animation-delay: calc(-0.3s * var(--i));
+    transform: translateY(5px);
+    margin: 0.2em;
+}
+
+h4{
+    display: none;
+}
+
+@keyframes anim {
+    0%, 100% {
+        transform: translateY(5px);
+    }
+    50% {
+        transform: translateY(-40px);
+    }
+}
+
+@keyframes anim2 {
+    0%, 100% {
+        transform: rotate(-10deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+}
+
+.logo img {
+  opacity: 0.1;
+  left: 25%;
+  top: 15%;
+  position: absolute;
+  display: none;
+}
+
+
+
+
+.direita {
+    background-color: rgb(36, 36, 36);
+    width: 16%;
+    height: 100vh;
+    right: 0%;
+    position: absolute;
+    top: 0;
+    opacity: 0; /* Inicia com opacidade 0 para não ser visível */
+    transition: opacity 3s ease; /* Adapte a duração conforme necessário */
+}
+
+.bloco {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+.menu {
+
+    color: #ffffff;
+    font-family:'Leelawadee UI Semilight';
+    right: 2.5%;
+    position: absolute;
+    top: -600px; /* Inicia o menu fora do campo visual */
+    z-index: 2;
+    transition: top 1s ease; /* Adiciona uma transição suave para a propriedade 'top' */
+
+}
+
+h1{
+    display: none;
+}
+
+.item {
+
+    padding: 10px;
+    margin-bottom: 80px;
+    border-radius: 0px;
+    display: flex;
+    width: 200px;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background-color: transparent;
+    border: 1px solid rgb(255, 255, 255);
+    transition: background-color 0.1s;
+    transition: color 0.1s; /* Adicione esta linha para controlar a transição */
+    }
+
+    .item:hover {
+        background-color: white; /* Muda o fundo para branco quando o mouse está sobre o elemento */
+    }
+
+    .menu h2:hover {
+        color: rgb(0, 0, 0);  
+    }
+
+
+.menu h2 {
+
+    font-family: 'Corbel Light';
+    font-size: 30px;
+    font-weight: 1px;
+    color: rgb(255, 255, 255);  
+
+}
+
+
+.perfeito {
+    position: fixed;
+    color: #333;
+    margin-left: 100px;
+    top: -500px; /* Inicia o elemento fora do campo visual */
+    transition: top 1s ease; /* Adiciona uma transição suave para a propriedade 'top' */
+}
+  
+  .container.hidden {
+    display: none; /* Esconde o elemento com a classe 'container'. */
+  }
+
+  .container {
+    display: block;
+  }
+
+  .botoes {
+    text-align: right;
+    position: fixed;
+    top: -500px; /* Inicia os botões fora do campo visual */
+    margin-left: 96px;
+    transition: top 1s ease; /* Adiciona uma transição suave para a propriedade 'top' */
+}
+  
+  
+  /* Estilização para os botões dentro da classe "botoes" */
+  .botoes button {
+    font-family: "Segoe UI Black"; /* Use a fonte personalizada com alternativa genérica */
+    background-color: #d8c200;
+    color: #333333da; /* Cor do texto branca */
+    border: none;
+    cursor: pointer;
+    padding: 8px 20px;
+    display: block; /* Faz com que os botões ocupem toda a largura disponível */
+    transform: translateY(-5px); /* Move o botão para cima ao passar o mouse */
+    box-shadow: 0px 5px 10px #00000094; /* Adiciona uma sombra */
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Adiciona transições suaves */
+    z-index:0;
+    /* Efeito 3D */
+    perspective: 1000px; /* Define a perspectiva para criar o efeito 3D */
+  }
+  
+  
+  .botoes button:hover {
+    transform: translateY(-10px) translateZ(10px); /* Move o botão para cima e para frente */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra mais pronunciada */
+  }
+  
+
+  
+@font-face {
+    font-family: 'GeosansLight'; /* Dê um nome à sua fonte */
+    src: url('/entre/oceano/afundo/fonts/GeosansLight.ttf') format('woff2'),
+         url('/entre/oceano/afundo/fonts/GeosansLight.ttf') format('woff');
+    /* Inclua todos os formatos que você tem disponíveis */
+  }
+  
+  h5 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 50px;
+    margin-top: 350px;
+    margin-bottom: 40px;
+
+  }
+  
+  h3{
+    display: none;
+  }
+  
+  p {
+  
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 22px;
+    font-weight: 10px;
+
+  }
+
+  /* Estilizando a barra de rolagem */
+::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem no Chrome/Safari */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #3498db; /* Cor do "polegar" da barra de rolagem */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Cor da "trilha" da barra de rolagem */
+}
+
+
+
+
+  @media only screen and (max-width: 1440px) {
+    .direita {
+        width: 9%;
+        height: 100vh;
+        display: none;
+    }
+
+    .menu h2{
+
+        font-size: 25px;
+
+    }
+
+    h5{
+
+        font-size: 60px;
+        margin-top: 200px
+    }
+
+    .item{
+        height: 80px;
+        width: 150px;
+        margin-bottom: 50px;
+       
+    }
+
+    .menu{
+
+        right: 7%;
+
+    }
+    
+    .nokia{
+        display: none;
+    }
+
+    
+}
+
+
+@media only screen and (min-width: 1280px) and (max-width: 1440px) {
+
+    /* Estilos específicos para Laptop 3 com resolução 1280x950 */
+
+    .direita {
+        display: none;
+
+    }
+
+    h5{
+
+        margin-top: 150px;
+        font-size: 52px;
+
+
+    }
+
+    .menu{
+
+        right: 5%;
+
+    }
+
+    .nokia{
+        display: none;
+    }
+
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+
+    .direita {
+        display: none;
+        width: 100%;
+        right: 0;
+        background-color: black;
+    }
+
+
+    .direita.visivel {
+        text-align: right;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        margin-top: 120px;
+        left: 7%;
+        z-index: 1;
+    }
+    .menu h2{
+        font-size: 20px;
+    }
+
+    .item{
+        width: 120px;
+        height: 40px;
+        background-color:transparent;
+        border: 1px solid white;
+        border-radius: 0px;
+
+    }
+
+    .menu.aberto {
+        display: block;
+    }
+
+
+
+    #botaoMenu {
+        display: none; /* Inicia oculto */
+        background-color: #333;
+        color: #ffffff;
+        padding: 10px;
+        cursor: pointer;
+        right: 20px;
+        border: none;
+        top: 20px;
+        position: absolute;
+        transform: translateY(-5px);
+        box-shadow: 0px 5px 10px #00000094;
+        transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+        perspective: 1000px;
+    }
+
+    .botoesMenu button:hover {
+        transform: translateY(-10px) translateZ(10px);
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .botoes{
+        margin-left:22%;
+
+    }
+    .botoes button {
+        background-color: #333;
+        color: #ffffff;
+        padding: 12px 40px;
+    }
+    .nokia{
+        display: block;
+        transition: top 1s ease; /* Adiciona uma transição suave para a propriedade 'top' */
+    }
+
+    /* Ocultar o botão quando o menu está aberto */
+    .menu.aberto #botaoMenu {
+        display: none;
+    }
+
+    h5 {
+
+        font-size: 27px;
+        display: block;
+    }
+    
+
+    .perfeito{
+        margin-left: 18%;
+    }
+
+    p{
+        font-size: 18px;
+        margin-bottom: 10px;
+        display: none;
+    }
+
+    .logo img{
+
+        width: 300px;
+        height: 200px;
+    }
+
+    h4{
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 27px;
+        margin-top: 200px;
+        display: block;
+        text-align: center;
+        white-space: nowrap; /* Impede quebras de linha */
+    }
+
+    h3{
+        font-size: 20px;
+        margin-bottom: 10px;
+        font-family: 'Nunito Sans', sans-serif;
+        text-align: center;
+        display: block;
+
+    }
+
+       
+   #a {
+       background-color: rgb(53, 53, 53);
+       height: 50vh;
+       top: 0;
+       position: relative;
+   }
+   
+   #b {
+   
+       background-color: rgb(53, 53, 53);
+       height: 50vh;
+       position: relative;
+       bottom: 0;
+   }
+   
+   .loader {
+   
+       position: absolute;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       top: 50%;
+       left: 34%;
+   }
+   
+   .loader div {
+       background: rgb(255, 255, 255);
+       border-radius: 50%;
+       width: 25px;
+       height: 25px;
+       z-index: 1;
+       animation: anim 2s infinite linear;
+       animation-delay: calc(-0.3s * var(--i));
+       transform: translateY(5px);
+       margin: 0.2em;
+   }
+
+    .bloco {
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+   }
+
+        /* Estilos específicos para o botão quando o menu está aberto */
+    #botaoMenu.fecharMenu {
+        
+        background-color: transparent;
+        border: 1px solid white;
+        width: 130px; 
+
+
+    }
+
+}
+
+
+@media only screen and (max-width: 500px) {
+    .botoes{
+        margin-left:15%;
+        
+
+    }
+
+    .aviso{
+
+        display:block;
+        font-size:20px;
+        top:0;
+        left:50%;
+            
+        }
+
+
+    .botoes button{
+
+        padding: 8px 20px;
+    }
+
+        h4{
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 27px;
+        margin-top: 200px;
+        display: block;
+        text-align: center;
+        margin-left: 50%;
+        white-space: nowrap; /* Impede quebras de linha */
+    }
+
+    h3{
+        font-size: 20px;
+        margin-bottom: 10px;
+        font-family: 'Nunito Sans', sans-serif;
+        text-align: center;
+        display: block;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        margin-top: 120px;
+        left: 7%;
+        z-index: 1;
+    }
+
+    .menu h2{
+        font-size: 20px;
+    }
+
+    .bloco {
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+   }
+    
+    .item{
+        width: 120px;
+        height: 40px;
+        background-color:transparent;
+        border: 1px solid white;
+        border-radius: 0px;
+
+    }
+
+    .logo img{
+
+        width: 200px;
+        height: 150px;
+    }
+        /* Estilos específicos para o botão quando o menu está aberto */
+    #botaoMenu.fecharMenu {
+        
+        background-color: transparent;
+        border: 1px solid white;
+        width: 130px; 
+
+
+    }
+
+
+}
+
+
+@media only screen and (max-width: 400px) {
+
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    html, body{
+        background: rgba(17, 17, 17, 0.78);
+        width: 100%;
+        height: 100vh;
+    }
+
+    .botoes{
+
+        margin-left:20%
+
+    }
+
+    .bloco {
+
+    text-align: left;
+    justify-content: left;
+    align-items: left;
+
+}
+
+
+    .botoes button{
+
+        padding: 8px 20px;
+        z-index:0;
+    }
+
+    h4 {
+
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 27px;
+        margin-top: 200px;
+        display: none;
+        text-align: center;
+        white-space: nowrap; /* Impede quebras de linha */
+        color: #ffffff;
+
+    }
+
+    h3 {
+
+        font-size: 20px;
+        margin-bottom: 10px;
+        font-family: 'Nunito Sans', sans-serif;
+        text-align: center;
+        display: none;
+        color: #ffffff;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        margin-top: 120px;
+        left: 7%;
+        z-index: 1;
+        color: #333;
+    }
+
+     h1{
+        color: #ffffff;
+        font-size: 35px;
+        margin-left: 10px;
+        margin-top: 400px;
+        z-index: 3;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: block;
+     }
+
+    .menu h2{
+        font-size: 24px;
+    }
+
+    .item{
+        width: 120px;
+        height: 40px;
+        background-color:transparent;
+        border: none;
+        border-radius: 0px;
+        left: -100px;
+        justify-content: left;
+        text-align: left;
+
+
+    }
+
+        /* Estilos específicos para o botão quando o menu está aberto */
+    #botaoMenu{
+        
+        background-color: transparent;
+        color: #ffffff;
+        border: 2px solid rgb(255, 255, 255);
+        font-family: Graphik, sans-serif;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.3;
+        letter-spacing: -0.01px;
+        border-radius: 30px;
+        width: 98px; 
+        right: 15px;
+        top: 40px;
+        font-size: 14px;      
+
+    }
+
+    #botaoMenu.fecharMenu {
+        
+        background-color: transparent;
+        border: 1px solid rgb(255, 255, 255);
+        width: 100px; 
+
+
+    }
+
+    .menu {
+
+        color: #ffffff;
+        font-family:'Leelawadee UI Semilight';
+        right: 2.5%;
+        position: absolute;
+        top: -600px; /* Inicia o menu fora do campo visual */
+        z-index: 2;
+        margin-top: -80px;
+    }
+
+    
+.direita {
+    background: rgba(17, 17, 17, 0.78);
+    opacity: 0.1;
+}
+
+        .logo img{
+
+        left: 24%;
+        position: absolute;
+        opacity: 1;
+        display: block;
+        z-index: 0;
+        top: 25%;
+        height: 200px;
+        width: 200px;
+    }
+
+    #fun{
+        position: absolute;
+        top: 32%;
+        opacity: 1;
+        z-index: 1;
+    }
+
+    .perfeito{
+        margin-left: 0%;
+        display: block;
+        width: 100%;
+        height: 100vh;
+    }
+
+    h4{
+        margin-left: 0%;
+
+    }
+
+    h3{
+        margin-left: 0%;
+
+    }
+    h5{
+        display: none;
+    }
+
+    .botoes{
+      
+
+        margin-left:2%;
+        position: absolute;
+        margin-top: 10%;
+        height:  40vh;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    #botaoEndereco {
+
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        outline: transparent solid 2px;
+        outline-offset: 2px;
+        cursor: pointer;
+        background-color: transparent;
+        border-color: rgb(255, 255, 255);
+        border-width: 0px;
+        border-style: none;
+        border-radius: 64px;
+        padding: 30px 15px;
+        box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
+        font-family: Graphik, sans-serif;
+        font-weight:600;
+        font-size: 15px;
+        letter-spacing: -0.01px;
+        color:rgb(204, 0, 0);
+        min-width: 48px;
+        width: 100%;
+        height: 50px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 30px;        
+        margin-top: 14%;
+        height:  6vh;
+        border: 2px solid rgb(204, 0, 0);
+    }
+
+    #nome{
+        display: block;
+        top: 80%;
+        left: 13px;
+        position: absolute;
+        color: rgb(215, 215, 215);
+        font-size: 19px;
+    }
+
+    #a {
+        background-color: rgb(53, 53, 53);
+        height: 50vh;
+        top: 0;
+        position: relative;
+        display: none;
+    }
+    
+    #b {
+        background-color: rgb(53, 53, 53);
+        height: 50vh;
+        position: relative;
+        bottom: 0;
+        display: none;
+    }
+    
+    .loader {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 50%;
+        left: 45%;
+        display: none;
+        
+    }
+}
