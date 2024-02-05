@@ -631,9 +631,267 @@ h1{
 
 
 }
-
-
 @media only screen and (max-width: 450px) {
+
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    html, body{
+        background: rgba(17, 17, 17, 0.78);
+        width: 100%;
+        height: 100vh;
+    }
+
+    .botoes{
+
+        margin-left:20%
+
+    }
+
+    .bloco {
+
+    text-align: left;
+    justify-content: left;
+    align-items: left;
+
+}
+
+
+    .botoes button{
+
+        padding: 8px 20px;
+        z-index:0;
+    }
+
+    h4 {
+
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 27px;
+        margin-top: 200px;
+        display: none;
+        text-align: center;
+        white-space: nowrap; /* Impede quebras de linha */
+        color: #ffffff;
+
+    }
+
+    h3 {
+
+        font-size: 20px;
+        margin-bottom: 10px;
+        font-family: 'Nunito Sans', sans-serif;
+        text-align: center;
+        display: none;
+        color: #ffffff;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        margin-top: 120px;
+        left: 7%;
+        z-index: 1;
+        color: #333;
+    }
+
+     h1{
+        color: #ffffff;
+        font-size: 35px;
+        margin-left: 10px;
+        margin-top: 400px;
+        z-index: 3;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: block;
+     }
+
+    .menu h2{
+        font-size: 24px;
+    }
+
+    .item{
+        width: 120px;
+        height: 40px;
+        background-color:transparent;
+        border: none;
+        border-radius: 0px;
+        left: -100px;
+        justify-content: left;
+        text-align: left;
+
+
+    }
+
+        /* Estilos específicos para o botão quando o menu está aberto */
+    #botaoMenu{
+        
+        background-color: transparent;
+        color: #ffffff;
+        border: 2px solid rgb(255, 255, 255);
+        font-family: Graphik, sans-serif;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.3;
+        letter-spacing: -0.01px;
+        border-radius: 30px;
+        width: 98px; 
+        right: 15px;
+        top: 40px;
+        font-size: 14px;      
+
+    }
+
+    #botaoMenu.fecharMenu {
+        
+        background-color: transparent;
+        border: 1px solid rgb(255, 255, 255);
+        width: 100px; 
+
+
+    }
+
+    .menu {
+
+        color: #ffffff;
+        font-family:'Leelawadee UI Semilight';
+        right: 2.5%;
+        position: absolute;
+        top: -600px; /* Inicia o menu fora do campo visual */
+        z-index: 2;
+        margin-top: -80px;
+    }
+
+    
+.direita {
+    background: rgba(17, 17, 17, 0.78);
+    opacity: 0.1;
+}
+
+        .logo img{
+
+        left: 24%;
+        position: absolute;
+        opacity: 1;
+        display: block;
+        z-index: 0;
+        top: 25%;
+        height: 200px;
+        width: 200px;
+    }
+
+    #fun{
+        position: absolute;
+        top: 32%;
+        opacity: 1;
+        z-index: 1;
+    }
+
+    .perfeito{
+        margin-left: 0%;
+        display: block;
+        width: 100%;
+        height: 100vh;
+    }
+
+    h4{
+        margin-left: 0%;
+
+    }
+
+    h3{
+        margin-left: 0%;
+
+    }
+    h5{
+        display: none;
+    }
+
+    .botoes{
+      
+
+        margin-left:2%;
+        position: absolute;
+        margin-top: 10%;
+        height:  40vh;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    #botaoEndereco {
+
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        outline: transparent solid 2px;
+        outline-offset: 2px;
+        cursor: pointer;
+        background-color: transparent;
+        border-color: rgb(255, 255, 255);
+        border-width: 0px;
+        border-style: none;
+        border-radius: 64px;
+        padding: 30px 15px;
+        box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
+        font-family: Graphik, sans-serif;
+        font-weight:600;
+        font-size: 15px;
+        letter-spacing: -0.01px;
+        color:rgb(204, 0, 0);
+        min-width: 48px;
+        width: 100%;
+        height: 50px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 30px;        
+        margin-top: 14%;
+        height:  6vh;
+        border: 2px solid rgb(204, 0, 0);
+    }
+
+    #nome{
+        display: block;
+        top: 60%;
+        left: 13px;
+        position: absolute;
+        color: rgb(215, 215, 215);
+        font-size: 19px;
+    }
+
+    #a {
+        background-color: rgb(53, 53, 53);
+        height: 50vh;
+        top: 0;
+        position: relative;
+        display: none;
+    }
+    
+    #b {
+        background-color: rgb(53, 53, 53);
+        height: 50vh;
+        position: relative;
+        bottom: 0;
+        display: none;
+    }
+    
+    .loader {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 50%;
+        left: 45%;
+        display: none;
+        
+    }
+}
+
+@media only screen and (max-width: 400px) {
 
     *{
         padding: 0;
