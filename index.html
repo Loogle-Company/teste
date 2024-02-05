@@ -1,54 +1,98 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informações do Usuário</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 </head>
+
 <body>
 
-<div id="infoUsuario"></div>
-<div id="infoIdade"></div>
-<div id="infoDispositivo"></div>
-<div id="infoLocalizacao"></div>
+        <!-- TELA DE CARREGAMENTO -->
 
-<script>
-    // Obter o nome do usuário do localStorage se existir, caso contrário, solicitar ao usuário
-    let nomeUsuario = localStorage.getItem("nomeUsuario");
+        <div id="a"></div>
+        <div id="b"></div>
 
-    if (!nomeUsuario) {
-        nomeUsuario = prompt("Digite seu nome:");
-        localStorage.setItem("nomeUsuario", nomeUsuario);
-    }
+    <div class="texto show">
+        
+        <p>1º SERVIÇO DE REGISTRO DE IMÓVEIS DE CAMPO LARGO</p>
+        
+    </div>
 
-    // Obter a idade do usuário do localStorage se existir, caso contrário, solicitar ao usuário
-    let idadeUsuario = localStorage.getItem("idadeUsuario");
 
-    if (!idadeUsuario) {
-        idadeUsuario = prompt("Digite sua idade:");
-        localStorage.setItem("idadeUsuario", idadeUsuario);
-    }
 
-    // Obter o tipo de dispositivo
-    const dispositivo = /Android/i.test(navigator.userAgent) ? 'Android' : /iPhone|iPad|iPod/i.test(navigator.userAgent) ? 'iOS' : 'Outro';
 
-    // Obter a localização do usuário usando a API de geolocalização
-    navigator.geolocation.getCurrentPosition(
-        (position) => {
-            const latitude = position.coords.latitude;
-            const longitude = position.coords.longitude;
+    <div class="loader">
+        <div style="--i: 1"></div>
+        <div style="--i: 2"></div>
+        <div style="--i: 3"></div>
+        <div style="--i: 4"></div>
+    </div>
 
-            // Atualizar os elementos na página com as informações
-            document.getElementById("infoUsuario").innerText = `Nome: ${nomeUsuario}`;
-            document.getElementById("infoIdade").innerText = `Idade: ${idadeUsuario}`;
-            document.getElementById("infoDispositivo").innerText = `Dispositivo: ${dispositivo}`;
-            document.getElementById("infoLocalizacao").innerText = `Localização: Latitude ${latitude}, Longitude ${longitude}`;
-        },
-        (error) => {
-            console.error("Erro ao obter localização:", error.message);
-        }
-    );
-</script>
+<div class="logo">
+<img src="/fundo.png" alt="">
+
+</div>
+
+  
+
+
+<div class="menu">
+    <div class="bloco">
+        <div class="item redirecionavel" onclick="window.location.href='https://louglecompany.github.io/infinito/'">
+            <h2>Tutoriais</h2>
+        </div>
+<div class="item redirecionavel4" onclick="window.location.href=' https://louglecompany.github.io/sobre/'">
+            <h2>Sobre</h2>
+        </div>
+
+        <div class="item redirecionavel3" onclick="window.location.href='./js/ajuda/contato/index.html'">
+    <h2>Contato</h2>
+</div>
+
+        </div>
+    </div>
+</div>
+
+
+    </div>
+
+    <div class="container">
+        <div class="perfeito">
+            <h5>Transformando sonhos em  propriedades legalmente <br> seguras</h5>
+            <p>1º Serviço de Registro de Imóveis
+                de Campo Largo</p>
+                <p id="nome">Oficial Titular: Maria Renata Setti de Pauli</p>
+                <h1>Construa <span style="color: rgba(255, 0, 0, 0.903);">sonhos</span> <br>
+                    Faça negócios</h1>                    
+
+
+
+            <h4>Registro de Imóveis</h4>
+            <h3>Campo Largo</h3>
+ 
+        </div>
+        <div  class="botoes">
+            <button id="botaoEndereco">QUERO IR PRESENCIALMENTE</button>
+        </div>
+    </div>
+
+    <div class="direita">
+
+    </div>
+
+    <div class="nokia">
+        <button id="botaoMenu">Menu</button>
+
+    </div>
+    <script src="script.js"></script>
 
 </body>
 </html>
+
